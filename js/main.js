@@ -5,11 +5,22 @@ var isGrow
 
 function onInit() {
     firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
-    firstTwoBalls.forEach(ball => {
-        ball.dataset.size = 100
-        ball.innerText = ball.dataset.size
+    firstTwoBalls.forEach(elBall => {
+        const initialColor = saveInitialColor(elBall)
+        renderBalls(elBall, 100, initialColor)
     })
+    const bodyInitialColor = saveInitialColor(document.body)
+    document.body.style.backgroundColor = bodyInitialColor
     isGrow = true
+}
+
+function saveInitialColor(el) {
+    var initialColor = el.dataset.initialColor
+    if (initialColor === undefined) {
+        initialColor = window.getComputedStyle(el).backgroundColor
+        el.dataset.initialColor = initialColor
+    }
+    return initialColor
 }
 
 function onGrowBall(elBall, maxDiameter) {

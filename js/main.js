@@ -11,4 +11,9 @@ function onBallClick(elBall, maxDiameter) {
     elBall.innerText = ballSize
     elBall.style.backgroundColor = ballColor
 }
+
+function onThirdBallClick() {
+    const firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
+    console.log(firstTwoBalls)
+    firstTwoBalls.forEach(ball => ball.click())
 }

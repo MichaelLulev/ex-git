@@ -1,6 +1,16 @@
 'use strict'
 
-var isGrow = true
+var firstTwoBalls
+var isGrow
+
+function onInit() {
+    firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
+    firstTwoBalls.forEach(ball => {
+        ball.dataset.size = 100
+        ball.innerText = ball.dataset.size
+    })
+    isGrow = true
+}
 
 function onGrowBall(elBall, maxDiameter) {
     var ballSize = +elBall.dataset.size
@@ -17,12 +27,10 @@ function onGrowBall(elBall, maxDiameter) {
 }
 
 function onGrowBalls() {
-    const firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
     firstTwoBalls.forEach(ball => ball.click())
 }
 
 function onShrinkBalls() {
-    const firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
     isGrow = false
     firstTwoBalls.forEach(ball => ball.click())
     isGrow = true

@@ -19,6 +19,10 @@ function onGrowBall(elBall, maxDiameter) {
     if (maxDiameter < ballSize) ballSize = 100
     if (ballSize < 100) ballSize = 100
     const ballColor = getRandomColor()
+    renderBalls(elBall, ballSize, ballColor)
+}
+
+function renderBalls(elBall, ballSize, ballColor) {
     elBall.dataset.size = ballSize
     elBall.style.width = ballSize + 'px'
     elBall.style.height = ballSize + 'px'

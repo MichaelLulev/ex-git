@@ -2,7 +2,7 @@
 
 var isGrow = true
 
-function onBallClick(elBall, maxDiameter) {
+function onGrowBall(elBall, maxDiameter) {
     var ballSize = +elBall.dataset.size
     const diff = getRandomIntInclusive(20, 60)
     ballSize += isGrow ? +diff : -diff
@@ -16,12 +16,12 @@ function onBallClick(elBall, maxDiameter) {
     elBall.style.backgroundColor = ballColor
 }
 
-function onThirdBallClick() {
+function onGrowBalls() {
     const firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
     firstTwoBalls.forEach(ball => ball.click())
 }
 
-function onFourthBallClick() {
+function onShrinkBalls() {
     const firstTwoBalls = document.querySelectorAll('.ball-1, .ball-2')
     isGrow = false
     firstTwoBalls.forEach(ball => ball.click())

@@ -11,17 +11,23 @@
 <body>
     <h1>The Ball Game</h1>
     <div class="ball ball-1"
-         onclick="onBallClick(this, 250)"
+         onclick="onGrowBall(this, 250)"
          data-size="100"
          >100
     </div>
     <div class="ball ball-2"
-         onclick="onBallClick(this, 500)"
+         onclick="onGrowBall(this, 500)"
          data-size="100"
          >100
     </div>
-    <div class="ball ball-3" onclick="onThirdBallClick()"></div>
-    <div class="ball ball-4" onclick="onFourthBallClick()"></div>
+    <div class="ball ball-3"
+         onclick="onGrowBalls()"
+         >
+    </div>
+    <div class="ball ball-4"
+         onclick="onShrinkBalls()"
+         >
+    </div>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>

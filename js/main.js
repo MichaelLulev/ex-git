@@ -27,3 +27,8 @@ function onShrinkBalls() {
     firstTwoBalls.forEach(ball => ball.click())
     isGrow = true
 }
+
+function onChangeBackground() {
+    const body = document.querySelector('body')
+    body.style.backgroundColor = getRandomColor()
+}

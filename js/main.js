@@ -1,12 +1,14 @@
-var ballSize = 100
-var ballColor
+'use strict'
 
 function onBallClick(elBall, maxDiameter) {
+    var ballSize = +elBall.dataset.size
     ballSize += getRandomIntInclusive(20, 60)
-    ballColor = getRandomColor()
     if (maxDiameter < ballSize) ballSize = 100
+    const ballColor = getRandomColor()
+    elBall.dataset.size = ballSize
     elBall.style.width = ballSize + 'px'
     elBall.style.height = ballSize + 'px'
-    elBall.style.backgroundColor = ballColor
     elBall.innerText = ballSize
+    elBall.style.backgroundColor = ballColor
+}
 }
